@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap");
+
+.main-content {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+
+  .background-pic {
+    position: absolute;
+    z-index: 1;
+    animation: zoomOut 50s;
+    height: 100vh;
+    width: 100vw;
+    background: url(../../assets/texture1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .content {
+    position: absolute;
+    background: black;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    opacity: 0.8;
+    -ms-transform: translate(-50%, 50%);
+    transform: translate(-50%, -50%);
+    clip-path: polygon(0% 25%, 100% 0%, 100% 75%, 0% 100%);
+    img {
+      margin-top: 150px;
+      margin-bottom: 0px;
+      padding: 0px;
+      padding-top: 5px;
+      height: 500px;
+      width: 500px;
+      border: 10px solid orange;
+      border-radius: 500px;
+      animation: fromTop 0.5s ease-in;
+    }
+
+    .title {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      z-index: 4;
+      opacity: 1;
+      text-align: center;
+      color: white;
+      h1 {
+        top: 0;
+        margin-top: 0;
+        font-family: "Rajdhani", sans-serif;
+        animation: fromLeft 1s ease-in;
+      }
+      button {
+        animation: fromRight 1s ease-in;
+      }
+    }
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(3) rotate(90deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes fromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-300px) rotate(10deg);
+  }
+  80% {
+    opacity: 0.5;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px) rotate(0deg);
+  }
+}
+
+@keyframes fromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(300px) rotate(-10deg);
+  }
+  80% {
+    opacity: 0.5;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px) rotate(0deg);
+  }
+}
+
+@keyframes fromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-300px) rotate(180deg);
+  }
+  80% {
+    opacity: 0.5;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) rotate(0deg);
+  }
+}
